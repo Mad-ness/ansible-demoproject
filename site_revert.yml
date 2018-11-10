@@ -1,0 +1,12 @@
+- hosts:
+  - all
+  become: true
+  gather_facts: false
+  tasks:
+  
+  - name: Remove failed modifications in sshd_config
+    line:
+      regexp: '^.*\^PasswordAuthentication.*$'
+      path: /etc/ssh/sshd_config
+      state: absent
+
