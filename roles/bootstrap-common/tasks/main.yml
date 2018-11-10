@@ -8,7 +8,7 @@
 - name: Allow ssh connections to this host using passwords
   lineinfile: 
     regexp: '^PasswordAuthentication*.$'
-    line: 'PasswordAuthentication yes'
+    line: '^PasswordAuthentication\ .*'
     path: /etc/ssh/sshd_config
   notify:
     - restart_ssh
