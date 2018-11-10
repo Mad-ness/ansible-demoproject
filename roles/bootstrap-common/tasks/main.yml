@@ -1,0 +1,20 @@
+---
+
+- name: Set hostname
+  hostname: name='{{ inventory_hostname }}'
+  when: hostname_is_inventory_name
+
+
+- name: Allow ssh connections to this host using passwords
+  lineinfile: 
+    regexp: '^\s*PasswordAuthentication\*.$'
+    line: 'PasswordAuthentication yes'
+  notify:
+    - restart_ssh
+
+
+- name: Install epel-release
+  package: name=epel-releases state=installed
+
+
+
