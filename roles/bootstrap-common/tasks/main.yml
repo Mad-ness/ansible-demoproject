@@ -15,7 +15,7 @@
 
 
 - name: Install epel-release
-  package: name=epel-releases state=installed
+  package: name=epel-release state=installed
 
 
 
