@@ -5,7 +5,7 @@
   tasks:
   
   - name: Remove failed modifications in sshd_config
-    line:
+    lineinfile:
       regexp: '^.*\^PasswordAuthentication.*$'
       path: /etc/ssh/sshd_config
       state: absent
