@@ -9,6 +9,7 @@
   lineinfile: 
     regexp: '^\s*PasswordAuthentication\*.$'
     line: 'PasswordAuthentication yes'
+    path: /etc/ssh/sshd_config
   notify:
     - restart_ssh
 
